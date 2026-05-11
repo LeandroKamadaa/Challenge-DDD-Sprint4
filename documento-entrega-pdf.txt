@@ -1,0 +1,34 @@
+PROJETO: CRM HOSPITAL SÃO RAFAEL - SPRINT 4
+
+INTEGRANTES DO GRUPO (GRUPO 6):
+- Cilas Pinto Macedo - RM560745
+- Ian Junji Maluvayshi Matsushita - RM560588
+- Pedro Arão Baquini - RM559580
+- Leandro Kamada Pesce Dimov - RM560381
+- Leonardo de Souza Pierangelli - RM560501
+
+--------------------------------------------------------------------------------
+
+DESCRIÇÃO DA SOLUÇÃO E PRINCIPAIS FUNCIONALIDADES (Mínimo de 20 linhas):
+
+O projeto CRM Hospital São Rafael foi desenvolvido visando solucionar a necessidade de uma gestão centralizada, eficiente e ágil do relacionamento entre a instituição de saúde, seus pacientes e potenciais clientes (leads), além de organizar o fluxo de atendimentos através de um módulo dedicado de agendamentos. A arquitetura da solução baseia-se fortemente nos princípios do Domain-Driven Design (DDD), garantindo que as regras de negócio vitais para a operação hospitalar fiquem isoladas, tratadas e protegidas na camada de domínio através de validações e exceções customizadas. Entre essas regras, destacam-se o cálculo dinâmico de IMC para apoio clínico, a blindagem contra duplicidade de cadastros sensíveis (cruzando CPF, telefone e e-mail) e a resolução inteligente de conflitos de horários em consultas médicas.
+
+Nesta etapa da Sprint 4, a aplicação evoluiu significativamente com a exposição de todos esses recursos em dois formatos distintos de saída. O primeiro formato consistiu na implementação de APIs REST (JSON Controllers). Estes controladores foram estruturados utilizando as melhores práticas do mercado: separação clara de domínios (Paciente, Lead e Agendamento), aplicação rigorosa de verbos HTTP semânticos (GET para consultas, POST para cadastro e PATCH para alterações de status) e a emissão dos Status Codes adequados para o sucesso ou falha da requisição (200 OK, 201 Created, 204 No Content). Esta estrutura garante uma comunicação perfeita com sistemas de terceiros ou aplicativos mobile.
+
+O segundo formato de exposição consistiu na criação de páginas visíveis geradas do lado do servidor (Server-Side) com a engine Thymeleaf (View Controllers) e interface em Bootstrap. A plataforma web desenvolvida serve não apenas como uma ferramenta administrativa direta para a listagem e controle dos dados pelo hospital, mas atua intencionalmente como uma documentação viva da API REST. Através da página principal e das listagens de entidades, todos os endpoints em JSON estão mapeados, explicados e diretamente acessíveis, comprovando que todas as funcionalidades propostas estão ativas, operacionais e em total conformidade com as boas práticas abordadas na disciplina.
+
+--------------------------------------------------------------------------------
+
+ANEXOS - PRINTS DAS TELAS (Solução Web e Documentação)
+
+[ INSIRA AQUI A IMAGEM DA TELA INICIAL (HOME) ]
+Figura 1: Tela inicial do CRM Hospital São Rafael. É possível visualizar a navegação pelas views e a documentação completa dos endpoints (JSON) organizados por domínio (Pacientes, Leads e Agendamentos).
+
+[ INSIRA AQUI A IMAGEM DA LISTAGEM DE PACIENTES ]
+Figura 2: View Controller da listagem de Pacientes. Exibição dos dados persistidos e os botões de atalho testando a integração com a rota JSON e a regra de negócio do cálculo de IMC.
+
+[ INSIRA AQUI A IMAGEM DA LISTAGEM DE LEADS ]
+Figura 3: View Controller da listagem de Leads. Tela apresentando os clientes em prospecção com seus respectivos canais de entrada e meios de contato.
+
+[ INSIRA AQUI A IMAGEM DA LISTAGEM DE AGENDAMENTOS ]
+Figura 4: View Controller da listagem de Agendamentos. Visualização completa do status das consultas médicas, garantindo a visualização da regra de negócios de aprovação e conflito de horários.
