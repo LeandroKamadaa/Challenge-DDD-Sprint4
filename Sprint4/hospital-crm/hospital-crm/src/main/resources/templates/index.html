@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital CRM - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Bem-vindo ao CRM Hospital São Rafael</h1>
+    <p>Esta é a aplicação desenvolvida para a Sprint 4.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Navegação (Views Server-Side)</h3>
+            <div class="list-group mb-4">
+                <a href="/pacientes" class="list-group-item list-group-item-action">Ver Pacientes</a>
+                <a href="/leads" class="list-group-item list-group-item-action">Ver Leads</a>
+                <a href="/agendamentos" class="list-group-item list-group-item-action">Ver Agendamentos</a>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <h3>Documentação da API (JSON Endpoints)</h3>
+            
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">Pacientes</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/api/pacientes" target="_blank">GET /api/pacientes</a> - Listar todos</li>
+                    <li class="list-group-item">GET /api/pacientes/{id} - Buscar por ID</li>
+                    <li class="list-group-item">POST /api/pacientes - Cadastrar paciente</li>
+                    <li class="list-group-item">GET /api/pacientes/{id}/imc - Calcular IMC</li>
+                </ul>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header bg-success text-white">Leads</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/api/leads" target="_blank">GET /api/leads</a> - Listar todos</li>
+                    <li class="list-group-item">GET /api/leads/{id} - Buscar por ID</li>
+                    <li class="list-group-item">POST /api/leads - Cadastrar lead</li>
+                </ul>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header bg-warning text-dark">Agendamentos</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/api/agendamentos" target="_blank">GET /api/agendamentos</a> - Listar todos</li>
+                    <li class="list-group-item">GET /api/agendamentos/{id} - Buscar por ID</li>
+                    <li class="list-group-item">POST /api/agendamentos - Agendar consulta</li>
+                    <li class="list-group-item">PATCH /api/agendamentos/{id}/status?status=valor - Atualizar status</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

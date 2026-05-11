@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamentos - Hospital CRM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <a href="/" class="btn btn-secondary mb-3">Voltar</a>
+    <h1>Agendamentos</h1>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Paciente ID</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Procedimento</th>
+            <th>Status</th>
+            <th>Ações API</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="agendamento : ${agendamentos}">
+            <td th:text="${agendamento.id}"></td>
+            <td th:text="${agendamento.pacienteId}"></td>
+            <td th:text="${agendamento.dataAgendamento}"></td>
+            <td th:text="${agendamento.hora}"></td>
+            <td th:text="${agendamento.procedimento}"></td>
+            <td th:text="${agendamento.status}"></td>
+            <td>
+                <a th:href="@{/api/agendamentos/{id}(id=${agendamento.id})}" target="_blank" class="btn btn-sm btn-info">Ver JSON</a>
+            </td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(agendamentos)}">
+            <td colspan="7" class="text-center">Nenhum agendamento cadastrado.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
